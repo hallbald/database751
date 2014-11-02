@@ -1,6 +1,6 @@
-CREATE DATABASE little_league;
-
-USE little_league;
+-- From: Yifan Zhu
+CREATE DATABASE little_league_2;
+USE little_league_2;
 
 CREATE TABLE coach
   (

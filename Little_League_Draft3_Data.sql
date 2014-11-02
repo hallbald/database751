@@ -1,8 +1,7 @@
-CREATE DATABASE little_league;
-
-USE little_league;
-
-DROP TABLE IF EXISTS family;
+-- from: Katie Fox
+DROP DATABASE IF EXISTS little_league_1;
+CREATE DATABASE little_league_1;
+USE little_league_1;
 
 CREATE TABLE family
   (
@@ -15,6 +14,66 @@ CREATE TABLE family
      ,family_phone            INT
      ,family_emergency_number INT
   );
+
+CREATE TABLE game
+  (
+     game_id         INT PRIMARY KEY
+     ,game_date      DATE
+     ,game_time      TIME
+     ,game_location  VARCHAR (45)
+     ,game_home_team VARCHAR (45)
+     ,game_away_team VARCHAR (45)
+     ,game_score     INT
+  );
+
+
+CREATE TABLE coach
+  (
+     coach_id         INT PRIMARY KEY
+     ,coach_lastname  VARCHAR(45)
+     ,coach_firstname VARCHAR(45)
+     ,coach_birthday  DATE
+     ,family_id       INT,
+     FOREIGN KEY (family_id) REFERENCES family (family_id)
+  );
+
+CREATE TABLE team
+  (
+     team_id    INTEGER PRIMARY KEY
+     ,team_name VARCHAR(45)
+     ,coach_id  INT
+     ,player_id INT
+     ,FOREIGN KEY (coach_id) REFERENCES coach (coach_id)
+--     ,FOREIGN KEY (player_id) REFERENCES player (player_id)
+  );
+
+-- ALTER TABLE team
+--  DROP FOREIGN KEY player_id; /*This is getting an error even though the syntax is correct*/
+
+CREATE TABLE player
+  (
+     player_id           INT PRIMARY KEY
+     ,player_lastname    VARCHAR(45)
+     ,player_firstname   VARCHAR(45)
+     ,player_birthday    DATE
+     ,player_skill_level VARCHAR(10)
+     ,family_id          INT,
+     FOREIGN KEY (family_id) REFERENCES family (family_id)
+  );
+
+ALTER TABLE player
+  ADD team_id INT,
+  ADD FOREIGN KEY (team_id) REFERENCES team (team_id);
+
+CREATE TABLE meet
+  (
+     meet_id  INT PRIMARY KEY
+     ,team_id INT
+     ,game_id INT
+     ,FOREIGN KEY (team_id) REFERENCES team (team_id)
+     ,FOREIGN KEY (game_id) REFERENCES game (game_id)
+  ); 
+
 
 INSERT INTO family
 (
@@ -101,22 +160,6 @@ VALUES
 )
 ;
 
-DROP TABLE IF EXISTS player;
-
-CREATE TABLE player
-  (
-     player_id           INT PRIMARY KEY
-     ,player_lastname    VARCHAR(45)
-     ,player_firstname   VARCHAR(45)
-     ,player_birthday    DATE
-     ,player_skill_level VARCHAR(10)
-     ,family_id          INT,
-     FOREIGN KEY (family_id) REFERENCES family (family_id)
-  );
-
-ALTER TABLE player
-  ADD team_id INT,
-  ADD FOREIGN KEY (team_id) REFERENCES team (team_id);
 
 INSERT INTO player
 VALUES
@@ -178,17 +221,6 @@ VALUES
 )
 ;
 
-DROP TABLE IF EXISTS coach;
-
-CREATE TABLE coach
-  (
-     coach_id         INT PRIMARY KEY
-     ,coach_lastname  VARCHAR(45)
-     ,coach_firstname VARCHAR(45)
-     ,coach_birthday  DATE
-     ,family_id       INT,
-     FOREIGN KEY (family_id) REFERENCES family (family_id)
-  );
 
 INSERT INTO coach
 VALUES
@@ -225,20 +257,6 @@ VALUES
 )
 ;
 
-DROP TABLE IF EXISTS team;
-
-CREATE TABLE team
-  (
-     team_id    INTEGER PRIMARY KEY
-     ,team_name VARCHAR(45)
-     ,coach_id  INT
-     ,player_id INT,
-     FOREIGN KEY (coach_id) REFERENCES coach (coach_id),
-     FOREIGN KEY (player_id) REFERENCES player (player_id)
-  );
-
-ALTER TABLE team
-  DROP FOREIGN KEY player_id; /*This is getting an error even though the syntax is correct*/
 
 INSERT INTO team
 (
@@ -300,26 +318,3 @@ VALUES
 )
 ;
 
-DROP TABLE IF EXISTS game;
-
-CREATE TABLE game
-  (
-     game_id         INT PRIMARY KEY
-     ,game_date      DATE
-     ,game_time      TIME
-     ,game_location  VARCHAR (45)
-     ,game_home_team VARCHAR (45)
-     ,game_away_team VARCHAR (45)
-     ,game_score     INT
-  );
-
-DROP TABLE IF EXISTS meet;
-
-CREATE TABLE meet
-  (
-     meet_id  INT PRIMARY KEY
-     ,team_id INT,
-          FOREIGN KEY (team_id) REFERENCES team (team_id)
-          ,game_id INT,
-     FOREIGN KEY (game_id) REFERENCES game (game_id)
-  ); 

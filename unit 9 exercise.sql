@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS madison_little_league;
-
-USE madison_little_league;
+-- from: Kelly Haberstroh
+CREATE DATABASE IF NOT EXISTS little_league_3;
+USE madison_little_league_3;
 
 -- family entity
 DROP TABLE IF EXISTS family;
