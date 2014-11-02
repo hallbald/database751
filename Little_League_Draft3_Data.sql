@@ -3,6 +3,8 @@ DROP DATABASE IF EXISTS little_league_1;
 CREATE DATABASE little_league_1;
 USE little_league_1;
 
+-- DDL
+
 CREATE TABLE family
   (
      family_id                INT PRIMARY KEY
@@ -37,6 +39,7 @@ CREATE TABLE coach
      FOREIGN KEY (family_id) REFERENCES family (family_id)
   );
 
+
 CREATE TABLE team
   (
      team_id    INTEGER PRIMARY KEY
@@ -49,6 +52,7 @@ CREATE TABLE team
 
 -- ALTER TABLE team
 --  DROP FOREIGN KEY player_id; /*This is getting an error even though the syntax is correct*/
+
 
 CREATE TABLE player
   (
@@ -72,9 +76,10 @@ CREATE TABLE meet
      ,game_id INT
      ,FOREIGN KEY (team_id) REFERENCES team (team_id)
      ,FOREIGN KEY (game_id) REFERENCES game (game_id)
-  ); 
+  );
 
-
+-- DML
+-- family
 INSERT INTO family
 (
   family_id,family_surname,family_street_address,family_city,family_state,family_zip_code,family_phone,family_emergency_number
@@ -160,104 +165,57 @@ VALUES
 )
 ;
 
-
-INSERT INTO player
-VALUES
-(
-  1,
-  'Davis',
-  'David',
-  12/12/90,
-  'medium',
-  1
-)
-;
-
-INSERT INTO player
-VALUES
-(
-  2,
-  'Pemberry',
-  'Peter',
-  12/13/90,
-  'excellent',
-  2
-)
-;
-
-INSERT INTO player
-VALUES
-(
-  3,
-  'Cranberry',
-  'Craig',
-  12/14/90,
-  'bad',
-  3
-)
-;
-
-INSERT INTO player
-VALUES
-(
-  4,
-  'Applesauce',
-  'Adam',
-  12/15/90,
-  'bad',
-  4
-)
-;
-
-INSERT INTO player
-VALUES
-(
-  5,
-  'Bratwurst',
-  'Benny',
-  12/16/90,
-  'great',
-  5
-)
-;
-
-
+-- coach
 INSERT INTO coach
 VALUES
 (
   1,
   'Davis',
   'John',
-  1978-10-27,
-  1
+  '1978-10-27',
+  111
 )
 ;
 
-INSERT INTO coach VALUES (2, 'Roberts', 'Robert', 1969-05-13, ...);
+INSERT INTO coach VALUES (
+  2,
+  'Roberts',
+  'Robert',
+  '1969-05-13',
+  121
+  );
 INSERT INTO coach
 VALUES
 (
   3,
   'Cranberry',
   'Sandra',
-  1980-12-24,
-  3
+  '1980-12-24',
+  311
 )
 ;
 
-INSERT INTO coach VALUES (4, 'Michaels', 'Michael', 1983-07-07, ...);
+INSERT INTO coach
+VALUES
+(
+  4,
+  'Michaels',
+  'Michael',
+  '1983-07-07',
+  301);
+
 INSERT INTO coach
 VALUES
 (
   5,
   'Bratwurst',
   'Rodger',
-  1976-07-04,
-  5
+  '1976-07-04',
+  NULL
 )
 ;
 
-
+-- team
 INSERT INTO team
 (
   team_id,team_name,coach_id
@@ -318,3 +276,70 @@ VALUES
 )
 ;
 
+
+-- player
+
+INSERT INTO player
+VALUES
+(
+  1,
+  'Davis',
+  'David',
+  '1990-12-12',
+  'medium',
+  301,
+  1
+)
+;
+
+INSERT INTO player
+VALUES
+(
+  2,
+  'Pemberry',
+  'Peter',
+  '1990-12-13',
+  'excellent',
+  161,
+  2
+)
+;
+
+INSERT INTO player
+VALUES
+(
+  3,
+  'Cranberry',
+  'Craig',
+  '1990-12-13',
+  'bad',
+  311,
+  3
+)
+;
+
+INSERT INTO player
+VALUES
+(
+  4,
+  'Applesauce',
+  'Adam',
+  '1990-12-15',
+  'bad',
+  311,
+  4
+)
+;
+
+INSERT INTO player
+VALUES
+(
+  5,
+  'Bratwurst',
+  'Benny',
+  '1990-12-16',
+  'great',
+  111,
+  5
+)
+;
