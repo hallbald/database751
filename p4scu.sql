@@ -8,8 +8,8 @@ CREATE TABLE family
   (
      family_id           INT (10) NOT NULL
      ,family_name        VARCHAR (20) NOT NULL
-     ,contact_phone_home INT (10) NOT NULL
-     ,contact_phone_cell INT (10)
+     ,contact_phone_home VARCHAR (10) NOT NULL
+     ,contact_phone_cell VARCHAR (10)
      ,contact_email      VARCHAR (50)
      ,contact_address    VARCHAR (100) NOT NULL,
      PRIMARY KEY (family_id)
@@ -82,8 +82,8 @@ VALUES
 (
   1,
   'Neilson',
-  1234567890,
-  9876543210,
+  '1234567890',
+  '9876543210',
   'neilson@littleague.org',
   '123 Brown St.'
 )
@@ -91,8 +91,8 @@ VALUES
 (
   2,
   'Cucumbersalad',
-  4567891230,
-  7891234560,
+  '4567891230',
+  '7891234560',
   'cucumbersalad@littleleague.org',
   '456 Lake St.'
 )
@@ -100,8 +100,8 @@ VALUES
 (
   3,
   'Swanson',
-  1472583690,
-  2583691470,
+  '1472583690',
+  '2583691470',
   'swanson@littleleague.org',
   '789 Park St.'
 )
@@ -109,8 +109,8 @@ VALUES
 (
   4,
   'Malarky',
-  3692581470,
-  7418529630,
+  '3692581470',
+  '7418529630',
   'malarky@littleleague.org',
   '147 University Ave.'
 )
@@ -118,8 +118,8 @@ VALUES
 (
   5,
   'FitzGerald',
-  9638527410,
-  8529637410,
+  '9638527410',
+  '8529637410',
   'fitzgerald@littleleague.org',
   '258 Whitney Way'
 )
@@ -127,8 +127,8 @@ VALUES
 (
   6,
   'Hillgartner',
-  9516238470,
-  7849516230,
+  '9516238470',
+  '7849516230',
   'hillgartner@littleleague.org',
   '369 Odana Rd.'
 )
@@ -136,8 +136,8 @@ VALUES
 (
   7,
   'Tripp',
-  1576320489,
-  5204630478,
+  '1576320489',
+  '5204630478',
   'tripp@littleleague.org',
   '159 State St.'
 )
@@ -145,8 +145,8 @@ VALUES
 (
   8,
   'Powers',
-  3456784105,
-  6248951247,
+  '3456784105',
+  '6248951247',
   'powers@littleleague.org',
   '487 Midvale Blvd.'
 )
