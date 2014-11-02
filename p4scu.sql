@@ -232,11 +232,16 @@ VALUES
   'tigers',
   7,
   5005
-)
-;
+),
+(
+  106,
+  'tangerines',
+  2,
+  5006
+);
 
-(106, 'tangerines', 2, 5006);INSERT INTO player VALUES
-    (101, 'Joe', 'Malarky', 'Joey' '1992-04-09', 104, 4),
+INSERT INTO player VALUES
+    (101, 'Joe', 'Malarky', 'Joey', '1992-04-09', 104, 4),
     (102, 'Emily', 'Hillgartner', 'lizz', '1995-02-04', 101, 6),
     (103, 'John', 'Tripp', 'Jo', '1996-03-06', 102, 7),
     (104, 'Suzie', 'FitzGerald', 'Suz', '1998-07-12', 105, 5),
