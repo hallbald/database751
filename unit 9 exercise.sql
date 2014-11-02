@@ -1,22 +1,21 @@
 -- from: Kelly Haberstroh
-CREATE DATABASE IF NOT EXISTS little_league_3;
+DROP DATABASE IF EXISTS little_league_3;
+CREATE DATABASE little_league_3;
 USE madison_little_league_3;
 
--- family entity
-DROP TABLE IF EXISTS family;
+-- DDL
 
+-- family entity
 CREATE TABLE family
   (
      family_id     INTEGER(3)
-     ,family_phone VARCHAR(12),
-     PRIMARY KEY (family_id)
+     ,family_phone VARCHAR(12)
+     ,PRIMARY KEY  (family_id)
   )
 engine=innodb
 DEFAULT charset=latin1;
 
 -- player entity
-DROP TABLE IF EXISTS player;
-
 CREATE TABLE player
   (
      player_id    INTEGER(5)
@@ -30,8 +29,6 @@ engine=innodb
 DEFAULT charset=latin1;
 
 -- coach entity
-DROP TABLE IF EXISTS coach;
-
 CREATE TABLE coach
   (
      coach_id    INTEGER(4)
@@ -43,8 +40,6 @@ engine=innodb
 DEFAULT charset=latin1;
 
 -- team entity
-DROP TABLE IF EXISTS team;
-
 CREATE TABLE team
   (
      team_id    INTEGER(2)
@@ -55,8 +50,6 @@ engine=innodb
 DEFAULT charset=latin1;
 
 -- game entity
-DROP TABLE IF EXISTS game;
-
 CREATE TABLE game
   (
      game_id        INTEGER(6)
@@ -67,8 +60,6 @@ engine=innodb
 DEFAULT charset=latin1;
 
 -- schedule entity
-DROP TABLE IF EXISTS schedule;
-
 CREATE TABLE schedule
   (
      game_id  INTEGER(6)
@@ -80,7 +71,7 @@ DEFAULT charset=latin1;
 
 -- Add foreign keys
 -- (PKs were inlined in the table create statements)
--- ------------------------- 
+-- -------------------------
 
 -- Base entities
 -- Weak relationships = SET NULL on delete
@@ -100,7 +91,7 @@ ALTER TABLE schedule
 
 -- DML (Data Modification Language statements)
 -- DML adds actual data to our database. It must
--- conform to entity attributes, datatypes and 
+-- conform to entity attributes, datatypes and
 -- relational constraints defined using DDL (above)
 
 -- Insert family values
@@ -192,7 +183,7 @@ VALUES
 )
 ;
 
--- Insert team 
+-- Insert team
 
 INSERT INTO team
 VALUES
@@ -374,4 +365,3 @@ VALUES
   'Tom E'
 )
 ; -- 5
-
