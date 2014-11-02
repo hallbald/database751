@@ -1,6 +1,27 @@
 -- From: Yifan Zhu
+DROP DATABASE IF EXISTS little_league_2;
 CREATE DATABASE little_league_2;
 USE little_league_2;
+
+-- DDL
+CREATE TABLE family
+  (
+     family_id           INT (10) NOT NULL
+     ,family_name        VARCHAR (20) NOT NULL
+     ,contact_phone_home INT (10) NOT NULL
+     ,contact_phone_cell INT (10)
+     ,contact_email      VARCHAR (50)
+     ,contact_address    VARCHAR (100) NOT NULL,
+     PRIMARY KEY (family_id)
+  );
+
+CREATE TABLE game
+  (
+     game_id        INT (50) NOT NULL
+     ,game_location VARCHAR (100)
+     ,game_date     DATETIME NOT NULL,
+     PRIMARY KEY (game_id)
+  );
 
 CREATE TABLE coach
   (
@@ -30,25 +51,6 @@ CREATE TABLE player
      ,team_id          INT (10) NOT NULL
      ,player_family_id INT (10) NOT NULL,
      PRIMARY KEY (player_id)
-  );
-
-CREATE TABLE family
-  (
-     family_id           INT (10) NOT NULL
-     ,family_name        VARCHAR (20) NOT NULL
-     ,contact_phone_home INT (10) NOT NULL
-     ,contact_phone_cell INT (10)
-     ,contact_email      VARCHAR (50)
-     ,contact_address    VARCHAR (100) NOT NULL,
-     PRIMARY KEY (family_id)
-  );
-
-CREATE TABLE game
-  (
-     game_id        INT (50) NOT NULL
-     ,game_location VARCHAR (100)
-     ,game_date     DATETIME NOT NULL,
-     PRIMARY KEY (game_id)
   );
 
 CREATE TABLE matchup
@@ -315,4 +317,4 @@ VALUES
   'home',
   2
 )
-; 
+;
