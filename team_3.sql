@@ -99,7 +99,7 @@ ALTER TABLE schedule
 INSERT INTO family
 VALUES
 (
-  001,
+  1,
   '6086981234'
 )
 ;
@@ -107,7 +107,7 @@ VALUES
 INSERT INTO family
 VALUES
 (
-  002,
+  2,
   '6086981235'
 )
 ;
@@ -115,7 +115,7 @@ VALUES
 INSERT INTO family
 VALUES
 (
-  003,
+  3,
   '6086981236'
 )
 ;
@@ -123,7 +123,7 @@ VALUES
 INSERT INTO family
 VALUES
 (
-  004,
+  4,
   '6086981237'
 )
 ;
@@ -131,7 +131,7 @@ VALUES
 INSERT INTO family
 VALUES
 (
-  005,
+  5,
   '6086981238'
 )
 ;
@@ -141,8 +141,8 @@ VALUES
 INSERT INTO coach
 VALUES
 (
-  0001,
-  001,
+  1,
+  1,
   'John D'
 )
 ;
@@ -150,8 +150,8 @@ VALUES
 INSERT INTO coach
 VALUES
 (
-  0002,
-  003,
+  2,
+  3,
   'Jean C'
 )
 ;
@@ -159,8 +159,8 @@ VALUES
 INSERT INTO coach
 VALUES
 (
-  0003,
-  002,
+  3,
+  2,
   'Holly W'
 )
 ;
@@ -168,8 +168,8 @@ VALUES
 INSERT INTO coach
 VALUES
 (
-  0004,
-  005,
+  4,
+  5,
   'Erin M'
 )
 ;
@@ -177,8 +177,8 @@ VALUES
 INSERT INTO coach
 VALUES
 (
-  0005,
-  004,
+  5,
+  4,
   'Willian N'
 )
 ;
@@ -188,7 +188,7 @@ VALUES
 INSERT INTO team
 VALUES
 (
-  01,
+  1,
   'Red'
 )
 ; -- 1
@@ -196,7 +196,7 @@ VALUES
 INSERT INTO team
 VALUES
 (
-  02,
+  2,
   'Blue'
 )
 ; -- 2
@@ -204,7 +204,7 @@ VALUES
 INSERT INTO team
 VALUES
 (
-  03,
+  3,
   'Yellow'
 )
 ; -- 3
@@ -212,7 +212,7 @@ VALUES
 INSERT INTO team
 VALUES
 (
-  04,
+  4,
   'Green'
 )
 ; -- 4
@@ -220,7 +220,7 @@ VALUES
 INSERT INTO team
 VALUES
 (
-  05,
+  5,
   'Black'
 )
 ; -- 5
@@ -230,7 +230,7 @@ VALUES
 INSERT INTO game
 VALUES
 (
-  000001,
+  1,
   'Madison'
 )
 ; -- 1
@@ -238,7 +238,7 @@ VALUES
 INSERT INTO game
 VALUES
 (
-  000002,
+  2,
   'Sheboygan'
 )
 ; -- 2
@@ -246,7 +246,7 @@ VALUES
 INSERT INTO game
 VALUES
 (
-  000003,
+  3,
   'Monroe'
 )
 ; -- 3
@@ -254,7 +254,7 @@ VALUES
 INSERT INTO game
 VALUES
 (
-  000004,
+  4,
   'Eau Claire'
 )
 ; -- 4
@@ -262,7 +262,7 @@ VALUES
 INSERT INTO game
 VALUES
 (
-  000005,
+  5,
   'Capitol'
 )
 ; -- 5
@@ -272,40 +272,40 @@ VALUES
 INSERT INTO schedule
 VALUES
 (
-  000001,
-  01
+  1,
+  1
 )
 ; -- 1
 
 INSERT INTO schedule
 VALUES
 (
-  000002,
-  02
+  2,
+  2
 )
 ; -- 2
 
 INSERT INTO schedule
 VALUES
 (
-  000003,
-  03
+  3,
+  3
 )
 ; -- 3
 
 INSERT INTO schedule
 VALUES
 (
-  000004,
-  04
+  4,
+  4
 )
 ; -- 4
 
 INSERT INTO schedule
 VALUES
 (
-  000005,
-  05
+  5,
+  5
 )
 ; -- 5
 
@@ -314,10 +314,10 @@ VALUES
 INSERT INTO player
 VALUES
 (
-  00001,
-  001,
-  01,
-  0001,
+  1,
+  1,
+  1,
+  1,
   'Jack A'
 )
 ; -- 1
@@ -325,10 +325,10 @@ VALUES
 INSERT INTO player
 VALUES
 (
-  00002,
-  002,
-  02,
-  0002,
+  2,
+  2,
+  2,
+  2,
   'David B'
 )
 ; -- 2
@@ -336,10 +336,10 @@ VALUES
 INSERT INTO player
 VALUES
 (
-  00003,
-  003,
-  03,
-  0003,
+  3,
+  3,
+  3,
+  3,
   'Eric C'
 )
 ; -- 3
@@ -347,10 +347,10 @@ VALUES
 INSERT INTO player
 VALUES
 (
-  00004,
-  004,
-  04,
-  0004,
+  4,
+  4,
+  4,
+  4,
   'Will D'
 )
 ; -- 4
@@ -358,10 +358,10 @@ VALUES
 INSERT INTO player
 VALUES
 (
-  00005,
-  005,
-  05,
-  0005,
+  5,
+  5,
+  5,
+  5,
   'Tom E'
 )
 ; -- 5
