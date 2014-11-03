@@ -118,11 +118,6 @@ def players(id_range)
   players
 end
 
-def render_players(file_name, range)
-  File.open(file_name, 'w') do |file|
-    file.write(players(range))
-  end
-end
 
 def render_full_sql(range)
   data = {players: players(range)}
@@ -130,4 +125,18 @@ def render_full_sql(range)
   File.open('generated/team_merge.sql', 'w') do |file|
     file.write(template)
   end
+  return data
+end
+
+def run(range)
+  puts 'starting render...'
+  data = render_full_sql(range)
+  puts 'added ' + data[:players].size.to_s + ' players'
+  puts 'ending render'
+end
+
+if __FILE__ == $0
+  start, stop = (ARGV[0] || 6), (ARGV[1] || 50)
+  puts "run: #{start}..#{stop}"
+  run start..stop
 end
