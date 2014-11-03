@@ -65,24 +65,30 @@ def generate_name
   fname =  $fnames.sample
   lname =  $lnames.sample
   nname = fname + $nickname_suffixes.sample
+
   if $last_name_cache.has_key? lname
     family_id = $last_name_cache[lname]
   else
     family_id = rand($families)+1
+    $last_name_cache[lname] = family_id
   end
+
   result = {
     player_fname: fname,
     player_lname: lname,
     player_nickname: nname,
     family_id: family_id
   }
+
   key = fname+lname
   if $name_cache.has_key?(key)
     result = generate_name
   else
     $name_cache[key] = 1
   end
+
   return result
+
 end
 
 def generate_birth_date
@@ -109,7 +115,7 @@ def players(id_range)
   id_range.each do |i|
     players << generate_player(i)
   end
-  players 
+  players
 end
 
 def render_players(file_name, range)
